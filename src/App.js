@@ -3,6 +3,7 @@ import './App.css';
 import {Button} from "reactstrap";
 import { ToastContainer, toast } from 'react-toastify';
 import Home from './component/Home';
+import Course from './component/Course';
 
 
 
@@ -23,6 +24,7 @@ position:"bottom-right",
    <h1>simple application</h1>
    <Button color="primary" outline onClick={btnhandle}>react button</Button>
    <Home></Home>
+   <Course></Course>
    
   </div>)
            

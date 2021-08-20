@@ -10,7 +10,7 @@ const Home=()=>{
             this is developed by ratan singh
         </p>
         <Container>
-            <Button color="primary">click me nothing will happen trust me</Button>
+            <Button color="primary">react button</Button>
         </Container>
 
 

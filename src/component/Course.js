@@ -9,20 +9,20 @@ import { Card,
     Container,}
     from "reactstrap"
 
-    const Course=()=>
+    const Course=({course})=>
     {
         return(
-          <div className="text-center">
+        
            <Card>
               <CardBody className="text-center">
-                  <CardTitle> java spring boot</CardTitle> 
-                      <CardSubtitle> card subtitle</CardSubtitle>
+                
+                      <CardSubtitle className="font-weight-bold">{course.title}</CardSubtitle>
                           <CardText>
-                              it is java course for biginerssssssssss
+                              {course.description}
                           </CardText>
-                          <Container>
+                          <Container className="text-center">
                               <Button color="danger">Delete</Button>
-                              <Button color="warning">Update</Button>
+                              <Button color="warning ml-3">Update</Button>
                           </Container>
                       
                   
@@ -30,7 +30,7 @@ import { Card,
 
            </Card>
 
-          </div>
+     
 
 
         )

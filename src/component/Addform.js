@@ -1,13 +1,18 @@
 import { Button } from "reactstrap"
-import React from "react"
+import React, { useEffect, useState } from "react";
 import { Container, FormGroup, Input } from "reactstrap"
 
 const Addform =()=>{
+    useEffect(()=>
+    {
+       document.title="add course"
+
+    },[]);
 return(
     <div>
         <form>
             <FormGroup>
-               
+            <label for="userId">userid</label>
                 <Input type="text" placeholder="enter user id" id="userId"/>
             </FormGroup>
             <FormGroup>

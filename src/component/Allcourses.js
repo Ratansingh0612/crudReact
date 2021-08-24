@@ -6,6 +6,7 @@ import Course from "./Course";
 
 import base_url from "../Api/bootapi";
 import axios from "axios"
+import { toast } from "react-toastify";
 
 const Allcourse=()=>{
 
@@ -21,10 +22,13 @@ const Allcourse=()=>{
          (response)=>{
              //for success
              console.log(response)
+             toast.success("courses has been loded")
+             setCourses(response.data)
          },
            (error)=>{
                //for compiler
                  console.log(console.error())
+                 toast.success("something went wrong")
              }
            );
         
@@ -38,12 +42,16 @@ useEffect(()=>{
 
 
     const[courses,setCourses]=useState([
-        {title:"java course",description:"this is java description"},
+        // {title:"java course",description:"this is java description"},
 
-        {title:"htlm course",description:"this is html description"},
-        {title:"react course",description:"this is react description"},
-        {title:"angular course",description:"this is angular description"}
+        // {title:"htlm course",description:"this is html description"},
+        // {title:"react course",description:"this is react description"},
+        // {title:"angular course",description:"this is angular description"}
     ])
+    const updateCourse=(id)=>{
+        setCourses(courses.filter((c)=>c.id!=id))
+    };
+
 return(
     <div>
        
@@ -51,7 +59,7 @@ return(
         
         {
             courses.length>0
-            ?courses.map((item)=><Course key={item.id} course={item}/>)
+            ?courses.map((item)=><Course key={item.id} course={item} update={updateCourse}/>)
             :"no courses available"
         }
 
